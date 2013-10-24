@@ -4,6 +4,8 @@ call pathogen#infect()
 syntax on
 filetype plugin indent on
 
+colorscheme badwolf 
+
 set hidden
 
 " Show the cursor position

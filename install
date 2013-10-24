@@ -13,3 +13,7 @@ fi
 [ -e ~/.gvimrc ] && rm ~/.gvimrc
 ln -s .vim/vimrc ~/.vimrc
 ln -s .vim/gvimrc ~/.gvimrc
+
+# make dirs for backups and swaps or vim will give you errors when opening and saving
+mkdir ~/.vim/backups
+mkdir ~/.vim/swaps
