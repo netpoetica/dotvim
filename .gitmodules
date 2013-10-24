@@ -40,6 +40,9 @@
 [submodule "bundle/vimerl"]
 	path = bundle/vimerl
 	url = https://github.com/jimenezrick/vimerl.git
+[submodule "bundle/vim-colors-solarized"]
+	path = bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "bundle/coffee-script"]
 	path = bundle/coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
@@ -70,9 +73,9 @@
 [submodule "bundle/vim-afterimage"]
 	path = bundle/vim-afterimage
 	url = https://github.com/tpope/vim-afterimage.git
-[submodule "bundle/badwolf"]
-	path = bundle/badwolf
-	url = https://github.com/sjl/badwolf/
 [submodule "bundle/scss-syntax"]
 	path = bundle/scss-syntax
-	url = https://github.com/cakebaker/scss-syntax.vim
+	url = https://github.com/cakebaker/scss-syntax.vim.git
+[submodule "bundle/badwolf"]
+	path = bundle/badwolf
+	url = https://github.com/sjl/badwolf.git
