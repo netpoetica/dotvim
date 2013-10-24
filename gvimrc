@@ -1,4 +1,4 @@
-colorscheme solarized
+colorscheme badwolf 
 
 set columns=120
 set guioptions-=T
