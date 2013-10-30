@@ -1,6 +1,14 @@
 dotvim
 ======
 
+NOTE: make a backup of ~/.vimrc, ~/.vim, ~/.gvimrc etc. For example
+
+```
+mv ~/.vimrc ~/.vimrc.bkup
+mv ~/.vim ~/.vim.bkup
+mv ~/.gvimrc ~/.gvimrc.bkup
+```
+
 Installation
 ------------
 
