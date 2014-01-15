@@ -12,7 +12,7 @@ mv ~/.gvimrc ~/.gvimrc.bkup
 Installation
 ------------
 
-1. `git clone https://github.com/proglottis/dotvim.git`
+1. `git clone https://github.com/netpoetica/dotvim.git`
 2. `cd dotvim`
 3. `git submodule init`
 4. `git submodule update`
