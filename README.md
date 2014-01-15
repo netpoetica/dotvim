@@ -20,3 +20,10 @@ Installation
 6. `./install`
 
 Note: install script will create a ~/.vim/swaps and ~/.vim/backups dir (if they dont exist) in order to keep swap files centralized.
+
+Uninstall
+---------
+To uninstall, run the following three commands:
+1. `unlink ~/.vim`
+2. `rm -rf ~/.vim/backups`
+3. `rm -rf ~/.vim/swaps`
