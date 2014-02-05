@@ -91,6 +91,7 @@ set expandtab
 
 " Enable line numbers
 set number
+nnoremap <F2> :set nonumber!<CR>
 
 " Highlight current line
 set cursorline
