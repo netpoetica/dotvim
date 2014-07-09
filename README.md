@@ -12,7 +12,7 @@ mv ~/.gvimrc ~/.gvimrc.bkup
 Installation
 ------------
 
-1. `git clone https://github.com/proglottis/dotvim.git`
+1. `git clone https://github.com/netpoetica/dotvim.git`
 2. `cd dotvim`
 3. `git submodule init`
 4. `git submodule update`
@@ -38,3 +38,11 @@ go get -u github.com/jstemmer/gotags
 Helpful Docs
 ------------
 [Mapping Vim Keys](http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_3))
+
+Uninstall
+---------
+To uninstall, run the following three commands:
+
+1. `unlink ~/.vim`
+2. `rm -rf ~/.vim/backups`
+3. `rm -rf ~/.vim/swaps`
