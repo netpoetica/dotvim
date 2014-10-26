@@ -8,6 +8,25 @@ colorscheme badwolf
 
 set hidden
 
+let mapleader = ','
+
+" ```````
+" buffers
+" ```````
+" creating buffers
+map <Leader>s <C-w>s
+map <Leader>v <C-w>v
+
+" switching between buffers with movement keys
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" forward and back in buffers
+nmap <tab> :bnext<CR>
+nmap <S-tab> :bprev<CR>
+
 " cold folding
 set foldmethod=indent   "fold based on indent
 " set foldnestmax=10      "deepest fold is 10 levels
@@ -16,8 +35,6 @@ set foldlevel=1         "this is just what i use
 
 " Show the cursor position
 set ruler
-
-set smarttab
 
 " Enhance command-line completion
 set wildmenu
@@ -49,10 +66,6 @@ map <space> :set hlsearch! hlsearch?<CR>
 vmap > >gv
 vmap < <gv
 
-" forward and back in buffers
-nmap <tab> :bnext<CR>
-nmap <S-tab> :bprev<CR>
-
 " always use ZoomWin
 nmap <unique> <c-w><c-o> <Plug>ZoomWin
 
@@ -83,21 +96,57 @@ set binary
 set noeol
 
 " Expand tabs to spaces
-set shiftwidth=1
-set expandtab
+" set expandtab
+
+" Tab Settings
+set smarttab
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
 
 " Enable line numbers
 set number
+nnoremap <F2> :set nonumber!<CR>
 
 " Highlight current line
 set cursorline
 
-" Make tabs as wide as two spaces
-set tabstop=2
-
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+" set lcs=trail:·,eol:¬,nbsp:_
 set list
 
 " Disable error bells
 set noerrorbells
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+
+" Go Tags for use with tagbar in vim-go
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
