@@ -25,7 +25,6 @@ set wildmenu
 " Always show status line
 set laststatus=2
 set autoread
-set guifont=Menlo\ for\ Powerline
 set spell
 
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
@@ -56,8 +55,6 @@ nmap <S-tab> :bprev<CR>
 
 " always use ZoomWin
 nmap <unique> <c-w><c-o> <Plug>ZoomWin
-
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 let g:ctrlp_regexp = 1
 let g:ctrlp_extensions = ['tag']
