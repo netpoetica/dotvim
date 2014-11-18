@@ -30,6 +30,9 @@ map <C-l> <C-W>l
 nmap <tab> :bnext<CR>
 nmap <S-tab> :bprev<CR>
 
+" toggle NERDTree with Ctrl + n
+map <C-n> :NERDTreeToggle<CR>
+
 " cold folding
 set foldmethod=indent   "fold based on indent
 " set foldnestmax=10    "deepest fold is 10 levels
