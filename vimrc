@@ -96,7 +96,7 @@ set binary
 set noeol
 
 " Expand tabs to spaces
-" set expandtab
+set expandtab
 
 " Tab Settings
 set smarttab
