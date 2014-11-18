@@ -1,10 +1,13 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
+
+" pathogen for plugins
 call pathogen#infect()
 
+syntax enable
 syntax on
 filetype plugin indent on
 
-colorscheme badwolf 
+colorscheme badwolf
 
 set hidden
 
@@ -29,7 +32,7 @@ nmap <S-tab> :bprev<CR>
 
 " cold folding
 set foldmethod=indent   "fold based on indent
-" set foldnestmax=10      "deepest fold is 10 levels
+" set foldnestmax=10    "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 
@@ -38,6 +41,19 @@ set ruler
 
 " Enhance command-line completion
 set wildmenu
+
+" enable 256 colors
+set t_Co=256
+
+" (cp) use Vim defaults (much better)
+set nocompatible
+
+" (sc) display an incomplete command in the lower right
+set showcmd
+
+" if you try to copy text out of the xterm that vim is
+" running in, you'll get the text as well as the numbers.
+set mouse=a
 
 " Always show status line
 set laststatus=2
@@ -103,6 +119,11 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
+set autoindent
+set smartindent
+
+" sets <LF> (unix) first, then tries <CR><LF> (dos) next
+set fileformats=unix,dos
 
 " Enable line numbers
 set number
@@ -115,6 +136,7 @@ set cursorline
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 " set lcs=trail:·,eol:¬,nbsp:_
 set list
+
 
 " Disable error bells
 set noerrorbells
@@ -150,3 +172,64 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
 \ }
+
+" set cursor configuration
+set guicursor=n-v-c:block-Cursor
+set guicursor+=i:ver100-iCursor
+set guicursor+=n-v-c:blinkwait10
+set guicursor+=i:blinkwait90
+
+" status message
+set laststatus=2                         " Always show status line
+set statusline =                         " clear out status line
+set statusline+=%#StatusFileName#        " 'todo' colorscheme
+set statusline+=[%Y]                     " file type
+set statusline+=%r\                      " read only mode
+set statusline+=%-10F                    " full file name
+set statusline+=%*                       " default colorscheme
+set statusline+=%=                       " right justify everything after this line
+set statusline+=[%3c,%-3l\               " cursor column position
+set statusline+=of\ %L\ lines\           " cursor line, total lines
+set statusline+=(%p%%)]\ \ \             " percentage
+set statusline+=[%{g:colors_name}\ ->\   " colorscheme
+set statusline+=(%{&term})\              " terminal color setting name
+set statusline+=%{&t_Co}\ Color\ Scheme] " color count
+
+" --------------------------------------------------------------------------------
+" Toggle status line color
+" --------------------------------------------------------------------------------
+function! InsertStatuslineColor(mode)
+  if a:mode == 'i'
+    highlight statusline guibg=green ctermbg=green
+  elseif a:mode == 'r'
+    highlight statusline guibg=white ctermbg=white
+  else
+    highlight statusline guibg=red ctermbg=red
+  endif
+endfunction
+ 
+au InsertEnter * call InsertStatuslineColor(v:insertmode)
+au InsertLeave * hi statusline guibg=gray ctermbg=gray
+ 
+" default the statusline to green when entering Vim
+highlight statusline guibg=gray ctermbg=gray
+ 
+" --------------------------------------------------------------------------------
+" Toggle status line color
+" --------------------------------------------------------------------------------
+function! InsertStatuslineColor(mode)
+  if a:mode == 'i'
+    highlight statusline guibg=green ctermbg=green
+  elseif a:mode == 'r'
+    highlight statusline guibg=white ctermbg=white
+  else
+    highlight statusline guibg=red ctermbg=red
+  endif
+endfunction
+ 
+au InsertEnter * call InsertStatuslineColor(v:insertmode)
+au InsertLeave * hi statusline guibg=gray ctermbg=gray
+ 
+" default the statusline to green when entering Vim
+highlight statusline guibg=gray ctermbg=gray
+

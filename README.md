@@ -35,9 +35,15 @@ go get -u github.com/jstemmer/gotags
 // See: https://github.com/jstemmer/gotags
 ```
 
+How to Install a New Plugin
+---------------------------
+`git submodule add https://github.com/<USER>/<REPO>.git bundle/<REPO>`
+
 Helpful Docs
 ------------
 [Mapping Vim Keys](http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_3))
+[Git Gutter](https://github.com/airblade/vim-gitgutter) - Shows Git repo changes
+[Airline](https://github.com/bling/vim-airline) - Status Bar plugin
 
 Uninstall
 ---------
