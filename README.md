@@ -21,7 +21,9 @@ Installation
 
 Note: install script will create a ~/.vim/swaps and ~/.vim/backups dir (if they dont exist) in order to keep swap files centralized.
 
-Note: after adding any new pathogen plugins, be sure to run :Helptags to generate help docs. See: http://usevim.com/2012/12/21/vim-101-help-tags/
+Note: after adding any new pathogen plugins, be sure to run :Helptags to generate help docs. See: http://usevim.com/2012/12/21/vim-101-help-tags
+
+Additionally, you can add `ignore = dirty` to individual modules who have helptags generated.
 
 
 Additional Deps
