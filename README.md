@@ -3,6 +3,8 @@ dotvim
 
 NOTE: make a backup of ~/.vimrc, ~/.vim, ~/.gvimrc etc. For example
 
+What about this?
+
 ```
 mv ~/.vimrc ~/.vimrc.bkup
 mv ~/.vim ~/.vim.bkup
@@ -52,6 +54,8 @@ Helpful Docs
 [Airline](https://github.com/bling/vim-airline) - Status Bar plugin
 
 [vim.org](http://www.vim.org/) - The mothership
+
+[Vim Commands from @snuggs](https://gist.github.com/snuggs/612093#file-vim)
 
 Uninstall
 ---------

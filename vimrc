@@ -33,6 +33,9 @@ nmap <S-tab> :bprev<CR>
 " toggle NERDTree with Ctrl + n
 map <C-n> :NERDTreeToggle<CR>
 
+" gundo for undo history
+nnoremap <F5> :GundoToggle<CR>
+
 " cold folding
 set foldmethod=indent   "fold based on indent
 " set foldnestmax=10    "deepest fold is 10 levels

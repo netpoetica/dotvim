@@ -88,3 +88,6 @@
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/bling/vim-airline
+[submodule "bundle/gundo"]
+	path = bundle/gundo
+	url = git@github.com:sjl/gundo.vim.git
