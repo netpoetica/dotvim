@@ -44,9 +44,13 @@ How to Install a New Plugin
 Helpful Docs
 ------------
 [Vim Tips and Commands](https://www.cs.oberlin.edu/~kuperman/help/vim/home.html)
+
 [Mapping Vim Keys](http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_3))
+
 [Git Gutter](https://github.com/airblade/vim-gitgutter) - Shows Git repo changes
+
 [Airline](https://github.com/bling/vim-airline) - Status Bar plugin
+
 [vim.org](http://www.vim.org/) - The mothership
 
 Uninstall
