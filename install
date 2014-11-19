@@ -1,5 +1,4 @@
 #!/bin/bash
-
 dotvim_dir=$(cd "$(dirname "$0")" && pwd)
 
 if [ $dotvim_dir -ef ~/.vim ]; then
@@ -17,3 +16,9 @@ ln -s .vim/gvimrc ~/.gvimrc
 # make dirs for backups and swaps or vim will give you errors when opening and saving
 mkdir ~/.vim/backups
 mkdir ~/.vim/swaps
+
+# move backup old jshint/jscs rcs and symlink new ones
+[ -e ~/.jshintrc ] && mv ~/.jshintrc ~/.jshintrc.bkup
+[ -e ~/.jscsrc ] && mv ~/.jscsrc ~/.jscsrc.bkup
+ln -s .jshintrc ~/.jshintrc
+ln -s .jscsrc ~/.jscsrc

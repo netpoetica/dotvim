@@ -39,6 +39,12 @@ go get -u github.com/jstemmer/gotags
 // See: https://github.com/jstemmer/gotags
 ```
 
+In order to use syntastic, syntax checkers for appropriate languages must be installed. See [https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers](wiki) for example syntax checkers. I usually use:
+```
+npm install -g jshint
+npm install -g jscs
+```
+
 How to Install a New Plugin
 ---------------------------
 `git submodule add https://github.com/<USER>/<REPO>.git bundle/<REPO>`
