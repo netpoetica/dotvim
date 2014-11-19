@@ -44,6 +44,7 @@ In order to use syntastic, syntax checkers for appropriate languages must be ins
 npm install -g jshint
 npm install -g jscs
 ```
+You can see what checkers are available by running `:SyntasticInfo` from vim.
 
 How to Install a New Plugin
 ---------------------------
