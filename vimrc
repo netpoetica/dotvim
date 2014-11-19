@@ -36,6 +36,10 @@ map <C-n> :NERDTreeToggle<CR>
 " gundo for undo history
 nnoremap <F5> :GundoToggle<CR>
 
+let g:syntastic_js_checkers = ['jshint', 'jscs']
+" allow multiple syntastic checkers for same filetype
+let g:syntastic_aggregate_errors=1
+
 " cold folding
 set foldmethod=indent   "fold based on indent
 " set foldnestmax=10    "deepest fold is 10 levels
