@@ -1,7 +1,0 @@
-#!/bin/bash
-
-# move backup old jshint/jscs rcs and symlink new ones
-[ -e ~/.jshintrc ] && mv ~/.jshintrc ~/.jshintrc.bkup
-[ -e ~/.jscsrc ] && mv ~/.jscsrc ~/.jscsrc.bkup
-ln -s ./jshintrc ~/.jshintrc
-ln -s ./jscsrc ~/.jscsrc
