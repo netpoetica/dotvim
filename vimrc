@@ -42,9 +42,10 @@ let g:syntastic_aggregate_errors=1
 
 " cold folding
 set foldmethod=indent   "fold based on indent
+" set foldmethod=syntax   "fold based on syntax file 
 " set foldnestmax=10    "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
-set foldlevel=1         "this is just what i use
+" set foldlevel=1         "this is just what i use
 
 " Show the cursor position
 set ruler
@@ -149,7 +150,10 @@ set list
 
 
 " Disable error bells
-set noerrorbells
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+  autocmd GUIEnter * set visualbell t_vb=
+endif
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
