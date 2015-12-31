@@ -5,7 +5,20 @@ call pathogen#infect()
 
 syntax enable
 syntax on
-filetype plugin indent on
+
+" omnicomplete for tern
+" set omnifunc=syntaxcomplete#Complete
+" autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+
+" remap omnicomplete to more useful keystroke
+inoremap <C-space> <C-x><C-o>
+
+" Example manual complete
+" au FileType php setl ofu=phpcomplete#CompletePHP
+
+" tern
+let g:term_map_keys=1
+let g:term_show_argument_hints="on_hold"
 
 colorscheme badwolf
 
@@ -36,7 +49,7 @@ map <C-n> :NERDTreeToggle<CR>
 " gundo for undo history
 nnoremap <F5> :GundoToggle<CR>
 
-let g:syntastic_js_checkers = ['jshint', 'jscs']
+let g:syntastic_javascript_checkers = ['eslint'] " gjslint 'eslint', 'jscs']
 " allow multiple syntastic checkers for same filetype
 let g:syntastic_aggregate_errors=1
 
@@ -123,18 +136,21 @@ set binary
 set noeol
 
 " Expand tabs to spaces
-set expandtab
+" set expandtab
+
+" Don't expand tabs to spaces
+set noexpandtab
 
 " Tab Settings
-set smarttab
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
-set autoindent
 set smartindent
+set smarttab
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+set autoindent
 
 " sets <LF> (unix) first, then tries <CR><LF> (dos) next
-set fileformats=unix,dos
+" set fileformats=unix,dos
 
 " Enable line numbers
 set number
@@ -247,3 +263,6 @@ au InsertLeave * hi statusline guibg=gray ctermbg=gray
 " default the statusline to green when entering Vim
 highlight statusline guibg=gray ctermbg=gray
 
+" git gutter settings
+" Set this higher manually when you get errors when writing to large files w/ many changes.
+let g:gitgutter_max_signs = 500  " default value.

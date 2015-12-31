@@ -98,3 +98,6 @@
 	path = bundle/tern_for_vim
 	url = git@github.com:marijnh/tern_for_vim.git
 	ignore = dirty
+[submodule "bundle/editorconfig-vim"]
+	path = bundle/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git
