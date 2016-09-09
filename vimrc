@@ -17,8 +17,8 @@ inoremap <C-space> <C-x><C-o>
 " au FileType php setl ofu=phpcomplete#CompletePHP
 
 " tern
-let g:term_map_keys=1
-let g:term_show_argument_hints="on_hold"
+let g:tern_map_keys=1
+let g:tern_show_argument_hints="on_hold"
 
 colorscheme badwolf
 
@@ -54,10 +54,10 @@ let g:syntastic_javascript_checkers = ['eslint'] " gjslint 'eslint', 'jscs']
 let g:syntastic_aggregate_errors=1
 
 " cold folding
-set foldmethod=indent   "fold based on indent
+set foldmethod=syntax     "fold based on indent
 " set foldmethod=syntax   "fold based on syntax file 
-" set foldnestmax=10    "deepest fold is 10 levels
-set nofoldenable        "dont fold by default
+" set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable          "dont fold by default
 " set foldlevel=1         "this is just what i use
 
 " Show the cursor position
