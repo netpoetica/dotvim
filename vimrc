@@ -1,5 +1,12 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 
+" TIP!
+" let TodayDate=system("date")
+" use :put =TOdayDate to read this var!
+
+" make sure we're using correct shell
+" set shell = /bin/zsh
+
 " pathogen for plugins
 call pathogen#infect()
 
@@ -49,9 +56,67 @@ map <C-n> :NERDTreeToggle<CR>
 " gundo for undo history
 nnoremap <F5> :GundoToggle<CR>
 
-let g:syntastic_javascript_checkers = ['eslint'] " gjslint 'eslint', 'jscs']
+
+" syntastic status line
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
 " allow multiple syntastic checkers for same filetype
-let g:syntastic_aggregate_errors=1
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+function! SyntasticESlintChecker()
+  let l:npm_bin = ''
+  let l:eslint = 'eslint'
+
+  if executable('npm')
+      let l:npm_bin = split(system('npm bin'), '\n')[0]
+  endif
+
+  if strlen(l:npm_bin) && executable(l:npm_bin . '/eslint')
+    let l:eslint = l:npm_bin . '/eslint'
+  endif
+
+  let b:syntastic_javascript_eslint_exec = l:eslint
+endfunction
+
+let g:syntastic_javascript_checkers = ["eslint"]
+
+autocmd FileType javascript :call SyntasticESlintChecker()
+
+" typescript compiler and linting
+" function! SyntasticTSlintChecker()
+"  let l:npm_bin = ''
+"  let l:tslint = 'tslint'
+
+"  if executable('npm')
+"      let l:npm_bin = split(system('npm bin'), '\n')[0]
+"  endif
+
+"  if strlen(l:npm_bin) && executable(l:npm_bin . '/tslint')
+"    let l:tslint = l:npm_bin . '/tslint'
+"  endif
+
+"  let b:syntastic_javascript_tslint_exec = l:tslint
+"endfunction
+
+" let g:syntastic_typescript_tsc_fname = ''
+let s:tslint_path = system('PATH=$(npm bin):$PATH && which tslint')
+let g:syntastic_typescript_tslint_exec = substitute(s:tslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
+" let g:syntastic_typescript_tslint_args = "--config ~/tslint.json"
+let g:syntastic_typescript_checkers = ['tslint', 'tsc']
+
+" function! TSConfig(where)
+"    let cfg = findfile('tsconfig.json', escape(a:where, ' ') . ';')
+"    return cfg !=# '' ? '-c ' . cfg : ''
+" endfunction
+
+" autocmd FileType typscript let b:syntastic_typescript_tslint_args = TSConfig(expand('<amatch>:p:h', 1))
+" autocmd FileType typescript :call SyntasticTSlintChecker()
 
 " cold folding
 set foldmethod=syntax     "fold based on indent
@@ -265,4 +330,5 @@ highlight statusline guibg=gray ctermbg=gray
 
 " git gutter settings
 " Set this higher manually when you get errors when writing to large files w/ many changes.
-let g:gitgutter_max_signs = 500  " default value.
+" See: https://github.com/airblade/vim-gitgutter/issues/259#issuecomment-168922482
+let g:gitgutter_max_signs = 9999  " default value.
